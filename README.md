@@ -22,10 +22,12 @@ A high-performance tool for identifying duplicate files across large directory s
 ### Building from Source
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/yourusername/duplicate-file-analyzer
 cd duplicate-file-analyzer
 cargo build --release
 ```
+
+The binary will be available at `./target/release/duplicate-analyzer`.
 
 ## Usage
 
