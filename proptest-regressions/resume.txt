@@ -1,0 +1,7 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc 17c1408da3643d71068f0e4afb29938fe4a419759f663703c1a68b38a9ef928d # shrinks to state = AnalysisState { session_id: "_A0_0aAA", target_directory: "AAaA_", discovery_options: DiscoveryOptions { exclude_patterns: [], exclude_directories: [], min_file_size: None, max_file_size: None, include_extensions: [], exclude_extensions: [], follow_symlinks: false, max_depth: None }, discovered_files: [], processed_files: [], duplicate_sets: [], errors: [], phase: Discovery, saved_at: SystemTime { tv_sec: 1766472349, tv_nsec: 620035000 }, progress: ProgressUpdate { files_processed: 0, total_files: 0, current_file: None, bytes_processed: 0, duplicates_found: 0, estimated_completion: None } }

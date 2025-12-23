@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Duplicate File Analyzer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Duplicate File Analyzer</h1>
+        <p>Find and manage duplicate files across your directory structure</p>
+      </header>
+
+      <main>
+        <section class="analysis-controls">
+          <h2>Start Analysis</h2>
+          <form id="analysis-form">
+            <div class="form-group">
+              <label for="target-directory">Target Directory:</label>
+              <input
+                type="text"
+                id="target-directory"
+                name="targetDirectory"
+                required
+                placeholder="/path/to/analyze"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="hash-algorithm">Hash Algorithm:</label>
+              <select id="hash-algorithm" name="hashAlgorithm">
+                <option value="sha256">SHA-256</option>
+                <option value="md5">MD5</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="exclude-patterns"
+                >Exclude Patterns (comma-separated):</label
+              >
+              <input
+                type="text"
+                id="exclude-patterns"
+                name="excludePatterns"
+                placeholder="*.tmp,*.log,node_modules"
+              />
+            </div>
+
+            <button type="submit" id="start-analysis">Start Analysis</button>
+          </form>
+        </section>
+
+        <section
+          class="progress-section"
+          id="progress-section"
+          style="display: none"
+        >
+          <h2>Analysis Progress</h2>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="progress-info">
+            <span id="progress-text">0% complete</span>
+            <span id="current-file"></span>
+          </div>
+        </section>
+
+        <section
+          class="results-section"
+          id="results-section"
+          style="display: none"
+        >
+          <h2>Analysis Results</h2>
+          <div class="results-summary" id="results-summary"></div>
+
+          <div class="results-controls">
+            <div class="view-toggle">
+              <button id="duplicate-view-btn" class="active">
+                Duplicate Sets
+              </button>
+              <button id="file-list-view-btn">All Files</button>
+            </div>
+            <div class="export-controls">
+              <button id="export-json-btn">Export JSON</button>
+              <button id="export-csv-btn">Export CSV</button>
+              <button id="export-html-btn">Export HTML</button>
+            </div>
+          </div>
+
+          <div class="duplicate-sets-view" id="duplicate-sets-view">
+            <div class="duplicate-sets" id="duplicate-sets"></div>
+          </div>
+
+          <div class="file-list-view" id="file-list-view" style="display: none">
+            <div class="file-list-controls">
+              <input
+                type="text"
+                id="file-search"
+                placeholder="Search files..."
+              />
+              <select id="file-filter">
+                <option value="all">All Files</option>
+                <option value="duplicates">Duplicates Only</option>
+                <option value="unique">Unique Files Only</option>
+              </select>
+            </div>
+            <table class="file-table" id="file-table">
+              <thead>
+                <tr>
+                  <th><input type="checkbox" id="select-all-files" /></th>
+                  <th class="sortable" data-sort="path">
+                    File Path <span class="sort-indicator"></span>
+                  </th>
+                  <th class="sortable" data-sort="size">
+                    Size <span class="sort-indicator"></span>
+                  </th>
+                  <th class="sortable" data-sort="modified">
+                    Modified <span class="sort-indicator"></span>
+                  </th>
+                  <th class="sortable" data-sort="duplicates">
+                    Duplicates <span class="sort-indicator"></span>
+                  </th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="file-table-body"></tbody>
+            </table>
+            <div class="bulk-actions" id="bulk-actions" style="display: none">
+              <button id="bulk-delete-btn" class="delete-btn">
+                Delete Selected
+              </button>
+              <button id="bulk-export-btn">Export Selected</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

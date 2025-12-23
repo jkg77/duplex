@@ -1,0 +1,9 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc 664ebfc280a92eaed2d8d9c1df0db9f39007a41f5e80a39811240b50ff458f62 # shrinks to directory_structure = [("./a", "")]
+cc 2d05ce84c6eb927f4ff78e612ae2ffd1a71d1895433adde63c312f896154e2c7 # shrinks to directory_structure = [("../E", "")]
+cc e018afae25e8f6b3c4912b4969d3833730f6c79ab91748f6c720560c64bb530b # shrinks to directory_structure = [("st", " b0RhVm CmD vS1a")], exclude_pattern = "u", exclude_dir = "W52vN", exclude_ext = "Yd", include_ext = "IaI", min_size = 996, max_size = 7103
