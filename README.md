@@ -22,8 +22,8 @@ A high-performance tool for identifying duplicate files across large directory s
 ### Building from Source
 
 ```bash
-git clone https://github.com/yourusername/duplicate-file-analyzer
-cd duplicate-file-analyzer
+git clone https://github.com/jkg77/duplex.git
+cd duplex
 cargo build --release
 ```
 

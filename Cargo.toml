@@ -5,7 +5,7 @@ edition = "2021"
 authors = ["Your Name <your.email@example.com>"]
 description = "A high-performance tool for identifying duplicate files across large directory structures"
 license = "MIT"
-repository = "https://github.com/yourusername/duplicate-file-analyzer"
+repository = "https://github.com/jkg77/duplex"
 
 [[bin]]
 name = "duplicate-analyzer"
